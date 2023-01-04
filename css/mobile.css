@@ -1,0 +1,212 @@
+/*********************************************************************************************
+              Mobile Style css
+                        *** 700미만 style ***
+*****************************/
+@media only screen and (max-width:699px) and (min-width:280px){
+  /********************** Mobile 해상도 공통 css */
+  .section h2 {
+    font-size: var(--fS-ttl-2-25); font-weight: 700;
+  }
+  .section .intro {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #section0 {
+    height: 500px; min-height: 500px;
+  }
+  #section0 .intro > p {
+    font-size: var(--fS-ttl-2-55);
+  }
+  #section0 .intro > p span {
+    display: block;
+    font-size: var(--fS-ttl-2-55);
+  }
+  #section0 .main-visual-item {
+    background: url(../img/main/main-Visual-img.jpg?tv) no-repeat;
+	background-size: cover;
+	background-position-x: 33%;
+    height: 500px; min-height: 500px;
+  }
+  #section1:after, #section2:after {
+    width: 100%; height: 280px;
+  }
+  #section1 {
+    height: 980px; min-height: 980px;
+}
+  .box-recommend-wrap {
+	margin-top: 1rem;
+  }
+  .box-recommend-wrap a {
+	display: block;
+	margin-bottom: .55rem;
+  }
+  .box-insurance-wrap {
+    margin-top: 1.125rem;
+  }
+  .box-insurance-wrap > ul li {
+    margin-bottom: .55rem;
+  }
+  .box-insurance-wrap > ul li:nth-last-child(4), .box-insurance-wrap > ul li:nth-last-child(4)~li {
+    width: 49%;
+  }
+  /* 갯수 축소로 ... 
+  .box-insurance-wrap > ul li:nth-child(2n+1) {
+    margin-left: 0%;
+  }
+  */
+  /* 갯수 3개로 축소된 경우 */
+  .box-insurance-wrap > ul li:nth-last-child(3), .box-insurance-wrap > ul li:nth-last-child(3)~li {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .box-insurance-item {
+    height: calc(230px - 2px);
+  }
+  .box-insurance-item p.insurance-con span {
+	display: inline-block;
+  }
+  .box-insurance-item span.more {
+    width: 34px; height: 34px;
+  }
+  #section2 {
+    height: 590px; min-height: 590px;
+  }
+  .box-recommend-wrap a img {
+	width: 100%;
+  }
+  .box-recommend-wrap a.pc {
+	display: none;
+  }
+  .box-recommend-wrap a.mobile {
+	display: block;
+	width: 100%;
+  }
+  #section3 {
+    height: 1060px; min-height: 1060px;
+	background-position-x: 50%;
+	background-size: cover;
+  }
+  #section3 .intro .box-service-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .customer-wrap, .consult-wrap {
+    display: block;
+    width: 100%;
+  }
+  .customer-wrap a.tel {
+    font-size: var(--fS-ttl-3);
+  }
+  .customer-wrap p {
+    padding-top: 0rem;
+  }
+  .customer-wrap p > span {
+	display: inline-block;
+	font-size: var(--fS-txt-875);
+  }
+  .consult-wrap {
+    text-align: left;
+    justify-content: flex-start;
+	align-content: flex-start;
+  }
+  .consult-wrap h2 {
+    margin-top: 3rem;
+  }
+  .consult-wrap form > ul li,
+  .consult-wrap > ul li {
+    clear: right;
+    width: 100%;
+    margin-left: 0rem;
+  }
+  .consult-wrap form > ul li:last-child,
+  .consult-wrap > ul li:last-child {
+    clear: right;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .consult-wrap form > ul li input,
+  .consult-wrap > ul li input {
+	width: 100%;
+    font-size: var(--fS-txt-875); text-align: left;
+	padding-left: 0rem;
+  }
+  .consult-wrap form > ul li a.kakao,
+  .consult-wrap > ul li a.kakao {
+	width: calc(100% - 53px); height: 68px; line-height: 68px;
+	position: absolute; top: 19rem; left: 0%;
+  }
+  .consult-wrap form > ul li a.kakao i.icon-kakao,
+  .consult-wrap > ul li a.kakao i.icon-kakao {
+	left: 50%;
+    transform: translate(-235%, -50%);
+  }
+  .consult-wrap form > ul li a.privacy-link,
+  .consult-wrap > ul li a.privacy-link {
+    font-size: var(--fS-txt-1);
+  }
+  .consult-wrap form > ul li a.white,
+  .consult-wrap > ul li a.white {
+    font-size: var(--fS-txt-95);
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  #section4 {
+    height: 638px; min-height: 638px;
+  }
+  .box-Udirect-wrap {
+    margin-top: 1.55rem; height: 770px;
+  }
+  .box-Udirect-wrap .udirect-list {
+    padding: 3rem 1.55rem;
+  }
+  .udirect-item {
+    display: block;
+    width: 100%;
+  }
+  .udirect-item a {
+	padding-bottom: 3rem;
+	align-content: center; align-items: center;
+  }
+  .udirect-item:last-child {
+    width: 100%;
+  }
+  .udirect-item:last-child a {
+	padding-bottom: 0;
+  }
+  .udirect-item a:before {
+    position: absolute; top: auto; right: 0rem; bottom: 1.55rem;
+    width: 100%; height: 1px;
+  }
+  .udirect-item a p {
+    text-align: center;
+  }
+  .udirect-item a .button-icon-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row; /*justify-content: space-around; more버튼 있을경우*/ align-items: flex-end;
+	justify-content: center; /*  more버튼 없을경우 */
+    margin-top: 1.25rem;
+  }
+  .udirect-item a .button-icon-wrap span {
+    width: 50%;
+  }
+  .udirect-item a .button-icon-wrap .icon-box-item {
+    /* width: 50%; more btn 있을경우 */ height: 88px; width: 88px/*more btn 없을경우*/;
+  }
+  .udirect-item a .button-icon-wrap .icon-box-item:after {
+	content: "";
+	position: absolute; top: 0; left: 0;
+	width: 88px; height: 88px;
+	transition-duration: 1s;
+  }
+  .icon-box-item .icon-join, .icon-box-item .icon-varies, .icon-box-item .icon-expert {
+	left: 2.75rem;
+  }
+  .udirect-item a .button-icon-wrap .more {
+    width: 5.55rem; height: 32px; line-height: 30px;
+	justify-content: flex-end;
+    margin-left: 0%; margin-top: 1rem; margin-bottom: 0.55rem;
+    font-size: var(--fS-txt-875);
+  }
+}

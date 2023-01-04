@@ -1,0 +1,350 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+/* 
+   v1.0 | 20220516
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0; padding: 0; border: 0;
+	font-size: 100%; font: inherit; font-family: 'Noto Sans KR', 'NanumSquare', 'Malgun Gothic', "맑은고딕", Dotum, sans-serif; line-height: 110%; letter-spacing: -.0313rem; color: var(--color-black);
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+div { display: block }
+article, aside, footer, header, hgroup, main, nav, section { display: block }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+  width: 100%;
+}
+address { display: block; }
+figcaption { display: block }
+hr {
+  display: block; overflow: hidden;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em; margin-block-end: 0.5em; margin-inline-start: auto; margin-inline-end: auto;
+  border-style: inset; border-width: 1px
+}
+map {
+  display: inline
+}
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+}
+video {
+  object-fit: contain;
+}
+video:-webkit-full-page-media {
+  margin: auto; position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  max-height: 100%; max-width: 100%;
+}
+img {
+  border-style: none;
+}
+button {
+  background: none;
+  border: 0;
+}
+strong {
+  font-weight: 700; line-height: 140%;
+}
+p {
+  font-size: var(--fS-txt-02); font-weight: 400;
+}
+
+/* form elements */
+form {
+  display: block;
+  margin-top: 0__qem;
+}
+:-webkit-any(table, thead, tbody, tfoot, tr) > form:-internal-is-html {
+  display: none !important;
+}
+label {
+  cursor: default;
+}
+legend {
+  display: block;
+  padding-inline-start: 2px;
+  padding-inline-end: 2px;
+  border: none
+}
+select { 
+  border-radius:0;          /* 아이폰 사파리 보더 없애기 */ 
+  -webkit-appearance:none;  /* 화살표 없애기 for chrome*/ 
+     -moz-appearance:none;  /* 화살표 없애기 for firefox*/ 
+          appearance:none   /* 화살표 없애기 공통*/ 
+}
+
+.clearfix:after {
+  content: " "; 
+  display: block; 
+  clear: both;
+}
+
+.inb {
+  font-size: 0%;
+}
+.inb > * {
+  display: inline-block;
+  vertical-align: top;
+}
+
+h2 { font-size: var(--fS-ttl-3-625); font-weight: 700; }
+h3 { font-size: var(--fS-ttl-2-55); font-weight: 700; }
+strong { font-weight: 700; }
+
+html::-webkit-scrollbar {
+    background-color: var(--color-snow);
+    width: 9px;
+}
+html::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+html::-webkit-scrollbar-thumb {
+    background-color: var(--point-color);
+    border-radius: 16px;
+    border: 4px solid transparent;
+}
+
+
+
+/******************************************************************
+           input & txtarea Style Css 
+***********************/
+input[type=txt], input[type=tel], input[type=email], input[type=password], input[type=url], input[type=number], input[type=search], input[type=date],
+txtarea {
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; 
+  outline: none; 
+  font-family: sans-serif;
+}
+/* PLACEHOLDER */
+::-webkit-input-placeholder { color: #aaa; }
+     :-ms-input-placeholder { color: #aaa; }
+         ::-moz-placeholder { color: #aaa; }
+input:focus::-webkit-input-placeholder, txtarea:focus::-webkit-input-placeholder { color: transparent; }
+          input:focus:-ms-input-placeholder, txtarea:focus:-ms-input-placeholder { color: transparent; }
+                  input:focus::-moz-placeholder, txtarea:focus::-moz-placeholder { color: transparent; }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+  vertical-align: middle;
+  outline: none; border:none;
+  border-radius: 0;
+}
+input:focus {
+  border-color: var(--color-red);
+}
+.input01 {
+  width: 100%; height: 42px; line-height: 40px;
+}
+.input-bottom {
+  width: 100%; height: 48px; line-height: 48px;
+  border-bottom: 1px solid var(--color-white);
+  background-color: transparent;
+}
+
+/******************************************************************
+           selectBox Style Css 
+***********************/
+select {
+  -webkit-appearance: none;  /* 네이티브 외형 감추기 */
+     -moz-appearance: none;
+          appearance: none;
+  background: url('') no-repeat 95% 50%;  /* 화살표 모양의 이미지 */ 
+  background-size: 14px;
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand { 
+  display: none;
+}
+select {
+  padding: 0 0 1px;
+  border: 0; border-radius: 0;
+  width: 100%;
+  font-weight: 400;
+  cursor: pointer;
+}
+select:focus, select:active {
+  outline: 0;
+  border-color: var(--color-red);
+}
+
+.select-box {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%; height: 42px; line-height: 40px;
+  background-color: var(--color-white);
+  border-radius: 3px; border: 1px solid var(--color-light-gray);
+  cursor: pointer;
+}
+.select-box select {
+  line-height: 40px;
+  width: 100%; padding-left: 15px;
+}
+.select-box:before {
+  content: '';
+  width: 35px;
+  position: absolute; top: 0px; right: 0px; bottom: 0px;
+  background: var(--color-snow);
+  border-radius: 0 5px 5px 0;
+  pointer-events: none;
+}
+.select-box:after {
+  content: '';
+  position: absolute; top: 0; right: 8px; bottom: 0;
+  background: url('../img/common/icon-arrow.svg') no-repeat; background-size: 100%;
+  width: 14px; height: 14px;
+  margin: auto;
+  pointer-events: none;
+}
+.select-box:hover {
+  border: 1px solid var(--color-red);
+}
+.select-box:hover:after {
+  background: url('../img/common/icon-arrow-hover.svg') no-repeat;
+}
+
+
+
+/******************************************************************
+           checkbox Style Css 
+***********************/
+label.checkbox {
+  position: relative;
+  padding: 0 0 0 28px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+label.checkbox input[type="checkbox"] {
+  display: none;
+}
+label.checkbox input[type="checkbox"]:checked + span {
+  opacity: 1;
+}
+label.checkbox::before {
+  position: absolute;
+  content: '';
+  top: 3px;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  border: 2px solid var(--color-white);;
+}
+label.checkbox span {
+  position: absolute; top: 3px; left: 2px;
+  width: 12px; height: 5px;
+  -webkit-transform: rotate(45deg);
+	  -ms-transform: rotate(45deg);
+		  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+label.checkbox span::before {
+  content: '';
+  position: absolute; left: 11px;
+  width: 3px; height: 11px;
+  background-color: var(--color-white);;
+}
+label.checkbox span::after {
+  position: absolute;
+  content: '';
+  top: 8px;
+  left: 7px;
+  width: 4px;
+  height: 3px;
+  background-color: var(--color-white);;
+}
+
+
+/******************************************************************
+           root Style Css 
+***********************/
+:root {
+  /* color style */
+  --point-color: #2498CC;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-dark-gray: #252525;
+  --color-deep-gray: #555;
+  --color-gray: #8F8F8F;
+  --color-silver: #aeaeae;
+  --color-ligth-gray: #d8d8d8;
+  --color-light-silver: #EFEFEF;
+  --color-snow: #f5f5f5;
+
+  --color-purple: #5C0F8B;
+  --color-navy: #2E408E;
+  --color-sky: var(--color-white);;
+  --color-green-yellow: #76BC21;
+  --color-yellow: #FCE200;  
+  --color-melon-yellow: #FFBD13;
+  --color-orange: #FF9015;
+  --color-red: #FE3B1F;
+  --color-dark-blue: #002A69;
+  --color-blue: #0B69F6;
+
+  /* widht */
+  --width-first: 100%;
+  --width-second: 49%;
+  --width-third: 32%;
+  
+  /* font family style */
+  --ffam-noto: 'Noto Sans KR', sans-serif;
+  --ffam-nanuSQ: 'NanumSquare', sans-serif;
+  --ffam-layfairD: 'Playfair Display', sans-serif;
+
+  /* font size style */
+  --fS-txt-00: 0rem;
+
+  --fS-ttl-5: 5rem;
+  --fS-ttl-4: 4rem;
+  --fS-ttl-3-625: 3.625rem;
+  --fS-ttl-3: 3rem;
+  --fS-ttl-2-55: 2.55rem;
+  --fS-ttl-2-25: 2.25rem;
+  --fS-ttl-2: 2rem;
+  --fS-ttl-1-75: 1.75rem;
+  --fS-ttl-1-55: 1.55rem;
+  --fS-ttl-1-25: 1.25rem;
+  --fS-ttl-1-125: 1.125rem;
+
+  --fS-txt-1-05: 1.05rem;
+  --fS-txt-1: 1rem;
+  --fS-txt-95: .95rem;
+  --fS-txt-875: .875rem;
+  --fS-txt-8: .8rem;
+  --fS-txt-75: .75rem;
+  --fS-txt-7: .7rem;
+}

@@ -1,0 +1,70 @@
+/*********************************************************
+        PC 약관 Area
+*/
+.terms-wrap {
+  width: 1200px;
+  margin: 150px auto 100px;
+}
+.terms-wrap h2 {
+  font-size: var(--fS-ttl-2-55);
+}
+.terms-wrap h3 {
+  font-size: var(--fS-ttl-1-55);
+  margin-top: 50px;
+}
+.terms-wrap > ul {
+  margin-top: 10px;
+}
+.terms-wrap > ul li {
+  line-height: 1.4;
+  font-size: var(--fS-txt-95);
+}
+.terms-wrap > ul li > ul {
+  margin: 5px 22px 10px 0;
+}
+
+/************************************************************************** 이용약관 style css */
+.type-number {
+  text-indent: -15px;
+  padding-left: 15px;
+}
+
+.type-circle {
+  text-indent: -20px;
+  padding-left: 20px;
+}
+
+
+
+@media(max-width:1280px){
+ /********************** 해상도 Tablet - 1280px css */
+ .terms-wrap {
+	width: 1000px;
+ }
+}
+
+@media(max-width: 1024px){
+ /********************** 해상도 Tablet - 1024px css */
+ .terms-wrap {
+	  width: 880px;
+ }
+}
+@media(max-width:800px){
+ /********************** 해상도 Tablet - 780px css */
+ .terms-wrap {
+	  width: 680px;
+ }
+}
+@media only screen and (max-width:699px) and (min-width:280px){
+  /********************** Mobile 해상도 공통 css */
+ .terms-wrap {
+	  width: 90%;
+ }
+ .terms-wrap h2 {
+    font-size: var(--fS-ttl-1-55);
+ }
+ .terms-wrap h3 {
+    font-size: var(--fS-ttl-1-125);
+    margin-top: 2rem;
+ }
+}

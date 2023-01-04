@@ -1,0 +1,719 @@
+/*********************************************************
+        PC main fullpage
+*/
+
+/************************************************************************** 공통 style css */
+.section h2 {
+  font-size: var(--fS-ttl-3-625); font-weight: 700;
+}
+.section .intro {
+    width: 1200px;
+    margin: 0 auto;
+}
+.intro > p  {
+  width: 100%;
+}
+
+
+
+/************************************************************************** main Visual :: img area */
+#section0 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; height: 820px; min-height: 820px;
+  overflow: hidden;
+  background: transparent;
+}
+#section0 .intro > h2 {
+  color: var(--color-white); font-weight: 400;
+}
+#section0 .intro > p span {
+  font-size: var(--fS-ttl-3-625); color: var(--color-white); font-weight: 400;
+}
+#section0 .intro > p span {
+  color: var(--color-white);
+}
+#section0 .intro > p span strong {
+  font-weight: 700;  color: var(--color-white);
+}
+#section0 .main-visual-item {
+  position: absolute; top: 0; left: 0; z-index: -1;
+  background: url('../img/main/main-Visual-img.jpg?tv') no-repeat 50% 50%;
+  width: 100%; height: 820px; min-height: 820px;
+  animation: visual-zoom both ease-in-out 3.2s;
+}
+
+
+/************************************************************************** 보험상품 & 추천상품 */
+#section1,
+#section2 {
+  position: relative;
+  display: flex;
+  flex-direction: column; justify-content: center;
+  height: 673px; min-height: 673px;
+  background: transparent;
+}
+#section1:after,
+#section2:after {
+  content: "";
+  position: absolute; top: 0; left: 0; z-index: -1;
+  background-color: var(--color-snow);
+  width: 100%; height: 380px;
+}
+#section1 p.small-ttl,
+#section2 p.small-ttl {
+  font-size: var(--fS-txt-95); font-weight: 500; color: var(--color-black);
+}
+#section1 .intro > h2,
+#section2 .intro > h2 {
+  margin-top: .625rem;
+}
+/******************* 보험상품 */
+.box-insurance-wrap {
+  width: 100%;
+  margin-top: 3.125rem;
+}
+.box-insurance-wrap > ul li {
+  overflow: hidden;
+  float: left;
+  margin-left: 2%;
+  font-size: 1rem;
+
+}
+.box-insurance-wrap > ul li:only-child {
+  width: 100%;
+  margin-left: 0%;
+}
+.box-insurance-wrap > ul li:first-child {
+  margin-left: 0%;
+}
+.box-insurance-wrap > ul li:nth-last-child(2), .box-insurance-wrap > ul li:nth-last-child(2)+li {
+  width: 49%;
+}
+.box-insurance-wrap > ul li:nth-last-child(3), .box-insurance-wrap > ul li:nth-last-child(3)~li {
+  width: 32%;
+}
+.box-insurance-wrap > ul li:nth-last-child(4), .box-insurance-wrap > ul li:nth-last-child(4)~li {
+  width: 23.5%;
+}
+.box-insurance-wrap > ul li:nth-last-child(5), .box-insurance-wrap > ul li:nth-last-child(5)~li {
+  width: 18.4%;
+}
+/*
+.box-insurance-wrap > ul li:nth-child(1) {
+  animation: fadeInRight both linear 1s;
+  animation-delay: 1s;
+}
+.box-insurance-wrap > ul li:nth-child(2) {
+  animation: fadeInRight both linear 1s;
+  animation-delay: 1.4s;
+}
+.box-insurance-wrap > ul li:nth-child(3) {
+  animation: fadeInRight both linear 1s;
+  animation-delay: 1.8s;
+}
+.box-insurance-wrap > ul li:nth-child(4) {
+  animation: fadeInRight both linear 1s;
+  animation-delay: 2.2s;
+}
+*/
+.box-insurance-item {
+  position: relative;
+  display: flex;
+  width: calc(100% - 2px); height: calc(320px - 2px);
+  border: 1px solid var(--color-ligth-gray);
+  background-color: var(--color-white);
+  flex-direction: column; align-content: center; justify-content: center; align-items: center;
+  cursor: pointer;
+}
+.box-insurance-item .insurance-logo {
+  position: relative;
+  height: 115px; width: 100%;
+}
+.box-insurance-item .insurance-logo:after {
+  content: "";
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-snow); border-radius: 50%;
+  width: 115px; height: 115px;
+}
+.box-insurance-item .insurance-logo img {
+  position: absolute; top: 50%; left: 50%; z-index: 2;
+  transform: translate(-50%, -50%);
+}
+.box-insurance-item .insurance-ttl {
+  font-size: var(--fS-ttl-1-25); font-weight: 700; color: var(--color-black);
+  margin-top: 1.57rem;
+}
+.box-insurance-item p.insurance-con {
+  font-size: var(--fS-txt-95); font-weight: 400; color: var(--color-black); line-height: 1.4;
+  padding-top: .625rem;
+  width: 100%; word-break: keep-all;
+}
+.box-insurance-item p.insurance-con span {
+  display: block;
+}
+.box-insurance-item span.more {
+  display: flex;
+  position: absolute; top: 0; right: 0;
+  width: 46px; height: 46px;
+  justify-content: center; align-items: center; align-content: center;
+}
+.box-insurance-item span.more span {
+  position: relative;
+  width: 14px; height: 14px;
+  transform: rotate( 0deg );
+}
+.box-insurance-item span.more span:before,
+.box-insurance-item span.more span:after {
+  content: "";
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate( 360deg );
+  background-color: var(--color-white);
+  transition: all 0.5s;
+}
+.box-insurance-item span.more span:before {
+  width: 14px; height: 2px;
+}
+.box-insurance-item span.more span:after {
+  width: 2px; height: 14px;
+}
+.box-insurance-item:hover {
+  border-color: var(--color-red);
+}
+.box-insurance-item:hover .insurance-logo:after {
+  background-color: #FFF3E4;
+}
+.box-insurance-item:hover .insurance-ttl {
+  color: var(--color-red);
+}
+.box-insurance-item:hover span.more {
+  background-color: var(--color-red);
+}
+.box-insurance-item:hover span.more span:before,
+.box-insurance-item:hover span.more span:after {
+  transform: translate(-50%, -50%) rotate( 90deg );
+  transition: all 0.5s;
+}
+.box-recommend-wrap {
+  font-size: var(--fS-txt-00);
+  margin-top: 1.57rem;
+}
+.box-recommend-wrap a {
+  display: inline-block;
+}
+.box-recommend-wrap a.mobile {
+  display: none;
+}
+
+
+/************************************************************************** 상담예약 */
+#section3 {
+  position: relative;
+  height: 730px; min-height: 730px;
+  background: url('../img/main/back-customer-center.jpg') no-repeat;
+  background-position-y: top;
+  background-size: 100%;
+}
+#section3 .intro .box-service-list {
+  display: flex; flex-direction: row;
+  width: 100%;
+  font-size: var(--fS-txt-00);
+  margin-top: 6.25rem;
+}
+.customer-wrap {
+  display: inline-block;
+  width: 40%;
+  font-size: var(--fS-txt-1);
+  text-align: left;
+  justify-content: flex-start;
+}
+.consult-wrap {
+  display: inline-block;
+  width: 60%;
+  font-size: var(--fS-txt-1); text-align: right;
+  justify-content: flex-end;
+}
+.customer-wrap h2,
+.consult-wrap h2 {
+  font-size: var(--fS-ttl-3); font-weight: 700; color: var(--color-white);
+}
+
+.customer-wrap a.tel {
+  display: block;
+  font-family: var(--ffam-nanuSQ);
+  font-size: var(--fS-ttl-4); font-weight: 700; color: var(--color-white);
+  margin-top: 1.25rem;
+}
+.customer-wrap p {
+  padding-top: 1.875rem; width: 100%;
+  text-align: left; line-height: 1.4;
+  font-size: var(--fS-txt-1-05); font-weight: 400; color: var(--color-white);
+}
+.customer-wrap p > span {
+  display: block;
+  font-size: var(--fS-txt-1-05); font-weight: 400; color: var(--color-white);
+}
+.consult-wrap form > ul,
+.consult-wrap > ul {
+  position: relative;
+}
+.consult-wrap form > ul li,
+.consult-wrap > ul li {
+  display: flex;
+  flex-direction: column; align-content: flex-end; align-items: flex-end;
+  float: right;
+  width: calc(60% - 2rem);
+  margin-left: 2rem;
+}
+.consult-wrap form > ul li:last-child,
+.consult-wrap > ul li:last-child {
+  float: right;
+  width: 40%;
+  margin-top: 2.55rem;
+  margin-left: 0rem; 
+  display: flex;
+  align-items: flex-start; flex-direction: column; align-content: flex-start;
+}
+.consult-wrap form > ul li p,
+.consult-wrap > ul li p {
+  width: 100%;
+  padding-top: 1.25rem;
+  font-size: var(--fS-txt-1-05); font-weight: 400; color: var(--color-white);
+}
+.consult-wrap form > ul li input,
+.consult-wrap > ul li input {
+  text-align: right;
+  width: calc(100% - 1rem);
+  font-size: var(--fS-txt-1); color: var(--color-white);
+  padding-left: 1rem;
+}
+.consult-wrap form > ul li input:focus,
+.consult-wrap > ul li input:focus {
+  border-color: var(--color-yellow);
+}
+.consult-wrap form > ul li a.privacy-link,
+.consult-wrap > ul li a.privacy-link {
+  font-size: var(--fS-txt-95); font-weight: 400; color: var(--color-yellow);
+  text-decoration: underline; text-align: left;
+}
+.consult-wrap form > ul li a.kakao,
+.consult-wrap > ul li a.kakao {
+	position: absolute; top: 11rem; right: 0%;
+}
+.consult-wrap form > ul li a.white,
+.consult-wrap > ul li a.white {
+  font-size: var(--fS-txt-95); font-weight: 400;
+  width: 220px;
+  margin-top: 1rem;
+}
+.consult-wrap form > ul li .agree,
+.consult-wrap > ul li .agree {
+  margin-top: 1.25rem;
+}
+.consult-wrap form > ul li .agree label,
+.consult-wrap > ul li .agree label {
+  font-size: var(--fS-txt-1); font-weight: 400; color: var(--color-white);
+}
+.consult-wrap form > ul li a.kakao,
+.consult-wrap > ul li a.kakao {
+  box-shadow: 0px 3px 0px rgba(0,0,0, .35);
+  margin: 1rem 0 ;
+}
+.consult-wrap form > ul li a.kakao:active,
+.consult-wrap > ul li a.kakao:active {
+  top:2px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+}
+
+
+
+/************************************************************************** 상담예약 */
+#section4 {
+  position: relative;
+  height: 448px; min-height: 448px;
+}
+#section4 .intro {
+  margin-top: -13rem;
+}
+#section4 .intro > h2 {
+  color: var(--color-white);
+}
+.box-Udirect-wrap {
+  width: 100%; height: 450px;
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 10px 0 rgba(0,0,0,0.25);
+  margin-top: 2rem; font-size: var(--fS-txt-00);
+}
+.box-Udirect-wrap .udirect-list {
+  padding: 5rem 0;
+}
+.udirect-item {
+  display: inline-block;
+  /** more btn 있을경우
+  width: 37%;
+   */
+  /** more btn 없을경우 */
+  width: 33.5%;
+}
+.udirect-item:last-child {
+  /** more btn 있을경우
+  width: 26%;
+   */
+  /** more btn 없을경우 */
+  width: 33%;
+}
+.udirect-item a {
+  position: relative;
+  display: flex;
+  /** more btn 있을경우
+  flex-direction: column; align-content: flex-start; align-items: flex-start;
+   */
+  /** more btn 없을경우 */
+  flex-direction: column; align-content: center; align-items: center;
+  cursor: default;
+}
+.udirect-item a:before {
+  content: "";
+  position: absolute; top: 0px; right: 0rem; /** more btn 있을경우right: 2.75rem; */
+  width: 1px; height: 100%;
+  background-color: var(--color-ligth-gray);
+}
+.udirect-item:last-child a:before {
+  position: absolute; top: 0px; right: 0rem;
+  width: 0px; height: 0;
+}
+.udirect-item a h3 {
+  font-size: var(--fS-ttl-2); font-weight: 700; color: var(--color-black);
+  text-align: left;
+  word-break: keep-all;
+}
+.udirect-item a p {
+  font-size: var(--fS-txt-1-05); font-weight: 400; color: var(--color-black);
+  text-align: center; padding-top: 1rem; line-height: 1.4;
+  width: 100%; word-break: keep-all;
+}
+.udirect-item a .button-icon-wrap {
+  width: 100%;
+  display: flex;
+  margin-top: 4.375rem;
+  /* more btn 있을경우
+  flex-direction: row; justify-content: flex-start; align-items: flex-end;
+  */
+  /** more btn 없을경우 */
+  align-content: center; justify-content: center; align-items: center;
+}
+.udirect-item a .button-icon-wrap .icon-box-item {
+  position: relative;
+  width: 128px; height: 128px;
+  transition-duration: 1s;
+}
+.udirect-item a .button-icon-wrap .icon-box-item:after {
+  content: "";
+  position: absolute; top: 0; left: 0;
+  width: 128px; height: 128px;
+  background-color: var(--color-snow);
+  border-radius: 50%;
+  transition-duration: 1s;
+}
+.icon-box-item .icon-join {
+  position: absolute; top: 50%; left: 50%; z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 68px; height: 68px;
+  background: url('../img/common/icon-application.png?tv') no-repeat;
+  background-size: 100%;
+}
+.icon-box-item .icon-varies {
+  position: absolute; top: 50%; left: 50%; z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 68px; height: 68px;
+  background: url('../img/common/icon-files.png?tv') no-repeat;
+  background-size: 100%;
+}
+.icon-box-item .icon-expert {
+  position: absolute; top: 50%; left: 50%; z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 68px; height: 68px;
+  background: url('../img/common/icon-call-center.png?tv') no-repeat;
+  background-size: 100%;
+}
+.udirect-item a .button-icon-wrap .more {
+  position: relative;
+  justify-content: flex-end;
+  width: 7rem; height: 36px; line-height: 34px;
+  margin-left: 3rem;
+  font-size: var(--fS-txt-1); font-weight: 400; color: var(--color-black);
+  border: 1px solid var(--color-ligth-gray); border-radius: 3px;
+}
+.udirect-item:last-child a .button-icon-wrap .more {
+  margin-right: -1rem;
+}
+
+.udirect-item a:hover h3 {
+  color: var(--point-color);
+}
+.udirect-item a:hover p {
+  color: var(--color-deep-gray);
+}
+.udirect-item a:hover .button-icon-wrap .icon-box-item:after {
+  background-color: var(--point-color);
+  transition-duration: 1s;
+}
+.udirect-item a:hover .button-icon-wrap .icon-box-item .icon-join {
+  background: url('../img/common/icon-application-White.png?tv') no-repeat;
+}
+.udirect-item a:hover .button-icon-wrap .icon-box-item .icon-varies {
+  background: url('../img/common/icon-files-white.png?tv') no-repeat;
+}
+.udirect-item a:hover .button-icon-wrap .icon-box-item .icon-expert {
+  background: url('../img/common/icon-call-center-white.png?tv') no-repeat;
+}
+.udirect-item a .button-icon-wrap .more:hover {
+  background-color: var(--point-color);
+  border-color: var(--point-color);
+  color: var(--color-white);
+}
+
+
+@media(max-width:1280px){
+ .section .intro {
+    width: 1000px;
+ }
+ .section h2 {
+    font-size: var(--fS-ttl-3);
+ }
+ #section4 {
+    height: 418px;
+    min-height: 418px;
+ }
+ #section4 .intro {
+	margin-top: -16rem;
+ }
+}
+
+@media(max-width: 1024px){
+ /********************** 해상도 Tablet - 1024px css */
+ .section .intro {
+    width: 880px;
+ }
+ #section0 {
+    height: 540px; min-height: 540px;
+ }
+ #section0 .main-visual-item {
+    background-size: cover;
+    height: 540px; min-height: 540px;
+ }
+ #section2 {
+    height: 470px; min-height: 470px;
+ }
+ #section2:after {
+    height: 300px;
+ }
+ .box-recommend-wrap a {
+    width: 50%;
+ }
+ #section3 .intro .box-service-list {
+    margin-top: 3.25rem;
+ }
+ .customer-wrap h2, .consult-wrap h2 {
+    font-size: var(--fS-ttl-2);
+ }
+ .customer-wrap a.tel {
+    font-size: var(--fS-ttl-2-55);
+    margin-top: 1rem;
+ }
+ .customer-wrap p {
+    padding-top: 1rem;
+    font-size: var(--fS-txt-1);
+ }
+ .consult-wrap > ul li p {
+    font-size: var(--fS-txt-1);
+ }
+ .consult-wrap > ul li input {
+    font-size: var(--fS-txt-875);
+ }
+ .consult-wrap > ul li a.kakao {
+    height: 58px; line-height: 58px;
+ }
+ .consult-wrap > ul li a.kakao i.icon-kakao {
+    width: 35px; height: 32px;
+	background-size: 100%;
+ }
+ #section4 {
+    height: 178px; min-height: 178px;
+ }
+ #section4 .intro {
+    margin-top: -22rem;
+ }
+ .box-Udirect-wrap {
+    margin-top: 1.55rem;
+	height: 360px;
+ }
+ .box-Udirect-wrap .udirect-list {
+    padding: 3rem;
+ }
+ .udirect-item a h3 {
+    font-size: var(--fS-ttl-1-55);
+ }
+ .udirect-item a .button-icon-wrap .icon-box-item {
+    width: 88px; height: 88px;
+ }
+ .icon-box-item .icon-join,
+ .icon-box-item .icon-varies,
+ .icon-box-item .icon-expert,
+ .udirect-item a:hover .button-icon-wrap .icon-box-item .icon-join,
+ .udirect-item a:hover .button-icon-wrap .icon-box-item .icon-varies,
+ .udirect-item a:hover .button-icon-wrap .icon-box-item .icon-expert {
+    width: 42px; height: 42px;
+	background-size: 100%;
+ }
+ .udirect-item a .button-icon-wrap .more {
+    width: 5.55rem; height: 32px; line-height: 30px;
+    margin-left: 2rem;
+    font-size: var(--fS-txt-875);
+ }
+}
+
+@media(max-width:800px){
+ /********************** 해상도 Tablet - 780px css */
+ .section .intro {
+    width: 680px;
+ }
+ .section h2 {
+    font-size: var(--fS-ttl-2-55);
+}
+ .box-insurance-item .insurance-logo {
+    height: 85px;
+ }
+ .box-insurance-item .insurance-logo img {
+    width: 76px; height: 24px;
+ }
+ .box-insurance-item .insurance-logo:after {
+    width: 85px; height: 85px;
+ }
+ .box-insurance-item .insurance-ttl {
+    font-size: var(--fS-ttl-1-125);
+ }
+ .box-insurance-item .insurance-ttl span {
+    display: block;
+ }
+ .box-insurance-item p.insurance-con {
+    font-size: var(--fS-txt-75);
+    padding-top: 0.75rem;
+ }
+ #section3 {
+    height: 710px; min-height: 710px;
+    background-size: cover;
+ }
+ .customer-wrap {
+    width: 30%;
+ }
+ .customer-wrap a.tel {
+    font-size: var(--fS-ttl-2);
+ }
+ .customer-wrap p {
+    font-size: var(--fS-txt-875);
+ }
+ .consult-wrap {
+    width: 70%;
+ }
+ .consult-wrap > ul li p {
+    padding-top: 1rem;
+    font-size: var(--fS-txt-875);
+ }
+ .consult-wrap > ul li input {
+    text-align: right;
+    width: calc(100% - 0.75rem);
+    font-size: var(--fS-txt-875);
+    padding-left: 0.75rem;
+ }
+ .consult-wrap > ul li a.privacy-link {
+    font-size: var(--fS-txt-75);
+ }
+ .consult-wrap > ul li a.white {
+    font-size: var(--fS-txt-875);
+    width: 100%;
+    margin-top: 1rem;
+ }
+ .udirect-item a:before {
+    right: 1.25rem;
+ }
+ .udirect-item a p {
+    font-size: var(--fS-txt-875);
+ }
+ .udirect-item a p span {
+	display: block;
+ }
+ .udirect-item a .button-icon-wrap {
+    width: auto;
+	flex-direction: column;
+	align-items: flex-start;
+    margin-top: 3.25rem;
+ }
+ .udirect-item:last-child a .button-icon-wrap {
+    margin-top: 1.45rem;
+ }
+ .udirect-item a .button-icon-wrap .more {
+    width: 5.55rem;
+    height: 32px;
+    line-height: 30px;
+    margin-left: 0rem; margin-top: 1rem;
+    font-size: var(--fS-txt-875);
+ }
+}
+
+/*********************************** 2022.12.07 리본 추가 작업 */
+
+.box-insurance-item .icon-belt-wrap {
+  position: absolute; top: 0; left: 0;
+  display: flex;
+  flex-wrap: nowrap; align-content: center; justify-content: center; align-items: center;
+  width: 40%; height: 45px;
+  background: linear-gradient(to right, #8f8f8f, #555);
+  box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, .2);
+}
+.box-insurance-item .icon-belt-wrap:before {
+  content: "";
+  position: absolute; top: 0; left: 100%;
+  border-left: 20px solid var(--color-deep-gray);
+  border-bottom: 25px solid transparent;
+}
+.box-insurance-item .icon-belt-wrap:after {
+  content: "";
+  position: absolute; bottom: 0; left: 100%;
+  border-bottom: 25px solid var(--color-deep-gray);
+  border-right: 20px solid transparent;
+}
+.box-insurance-item .icon-belt-wrap span {
+  font-size: var(--fS-txt-1-05); font-weight: 400;
+  color: var(--color-white);
+}
+/************************************ hover */
+
+.box-insurance-item.pat:hover{
+  border-color: var(--color-melon-yellow);
+}
+.box-insurance-item:hover .icon-belt-wrap {
+  background: var(--color-red);
+}
+.box-insurance-item.pat:hover .icon-belt-wrap {
+  background: var(--color-melon-yellow);
+}
+.box-insurance-item.pat:hover .icon-belt-wrap span {
+  color: #463200;
+}
+.box-insurance-item:hover .icon-belt-wrap:before {
+  border-left-color: var(--color-red);
+}
+.box-insurance-item:hover .icon-belt-wrap:after {
+  border-bottom-color: var(--color-red);
+}
+.box-insurance-item.pat:hover .icon-belt-wrap:before {
+  border-left-color: var(--color-melon-yellow);
+}
+.box-insurance-item.pat:hover .icon-belt-wrap:after {
+  border-bottom-color: var(--color-melon-yellow);
+}
+
