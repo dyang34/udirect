@@ -28,6 +28,7 @@ $arrIns = array();
 $arrIns['name'] = $consult_name;
 $arrIns['hp'] = $consult_hp;
 $arrIns['content'] = $consult_content;
+$arrIns['category'] = $category;
 
 ConsultMgr::getInstance()->add($arrIns);
 
@@ -46,8 +47,8 @@ if($rs->num_rows > 0) {
 		array_push($arrUser, $row["hiworks_id"]);
 	}
 }
-$title = "[유다이렉트 상담 유입 알림]";
-$message = "유다이렉트에 상담이 등록 되었습니다.
+$title = "[유다이렉트 상담(".$category.") 유입 알림]";
+$message = "유다이렉트에 상담(".$category.")이 등록 되었습니다.
 관리자에서 상세 내용을 확인해 주세요.
 ".$link;
 $link = "https://udirect.co.kr/admin/src/consult_list.php";

@@ -183,7 +183,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/include/common.php";
 							<a href="https://www.acedirect.co.kr/servlets/common/commonForward.ace?target=mobile/products/product&layout=mtype1&productGroup=CM&productType=APT&utm_source=ulife&utm_medium=affiliate&utm_campaign=apt_ulife" target="_blank">
 								<div class="logo-item"><img src="/img/main/logo-chubb-col.png"></div>
 								<div class="cont-text-item"></div>
-								<i class="icon-chubb">CHUBB 에이스손해보험 Icon</i>
+								<i class="icon-chubb">CHUBB 에이스손해보험 아이콘</i>
 							</a>
 						</li>
 					</ul>
