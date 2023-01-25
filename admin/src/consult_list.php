@@ -19,6 +19,7 @@ $currentPage = RequestUtil::getParam("currentPage", "1");
 $pageSize = RequestUtil::getParam("pageSize", "25");
 
 $_fg_process = RequestUtil::getParam("_fg_process", "");
+$_category = RequestUtil::getParam("_category", "");
 $_src_type = RequestUtil::getParam("_src_type", "");
 $_src_text = RequestUtil::getParam("_src_text", "");
 $_order_by = RequestUtil::getParam("_order_by", "fg_process");
@@ -31,6 +32,7 @@ if ($_fg_process!="") {
     $wq->addAndString2("fg_process","=",$_fg_process);
 }
 $wq->addAndString2("fg_del","=","0");
+$wq->addAndString("category","=",$_category);
 $wq->addAndLike($_src_type,$_src_text);
 $wq->addOrderBy($_order_by, $_order_by_asc);
 $wq->addOrderBy("regdate", "desc");
@@ -43,7 +45,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
     <input type="hidden" name="currentPage" value="<?=$currentPage?>">
     <input type="hidden" name="_src_type" value="<?=$_src_type?>">
     <input type="hidden" name="_src_text" value="<?=$_src_text?>">
-    
+    <input type="hidden" name="_category" value="<?=$_category?>">    
     <input type="hidden" name="_order_by" value="<?=$_order_by?>">
     <input type="hidden" name="_order_by_asc" value="<?=$_order_by_asc?>">
 </form>
@@ -66,14 +68,31 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
             <table class="table-search">
                 <colgroup>
                     <col style="width:7%;">
-                    <col style="width:26%;">
+                    <col style="width:18%;">
                     <col style="width:7%;">
-                    <col style="width:27%;">
+                    <col style="width:18%;">
                     <col style="width:7%;">
-                    <col style="width:26%;">
+                    <col style="width:18%;">
+                    <col style="width:7%;">
+                    <col style="width:18%;">
                 </colgroup>
                         <tbody>
                             <tr>
+                                <th>보험구분</th>
+                                <td>
+                                    <div class="select-box" style="width:150px;">
+                                        <select name="_category" depth="1">
+                                            <option value="" <?=$_category==""?"selected='selected'":""?>>전체</option>
+<?php
+    for($i=0;$i<count($arrInsurCategory);$i++) {
+?>
+                                <option value="<?=$arrInsurCategory[$i]?>" <?=$_category==$arrInsurCategory[$i]?"selected":""?>><?=$arrInsurCategory[$i]?></option>
+<?php
+    }
+?>
+                                        </select>
+                                    </div>
+                                </td>
                                 <th>처리여부</th>
                                 <td>
                                     <div class="select-box" style="width:120px;">
@@ -85,8 +104,8 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
                                     </div>
                                 </td>
                                 <th>검색어</th> 
-                                <td colspan="5">
-                                    <div class="select-box" style="width:15%;">
+                                <td colspan="3">
+                                    <div class="select-box" style="width:100px;">
                                         <select name="_src_type">
                                             <option value="name" <?=$_src_type=="name"?"selected='selected'":""?>>성명</option>
                                             <option value="hp" <?=$_src_type=="hp"?"selected='selected'":""?>>연락처</option>
@@ -110,6 +129,8 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
         <div class="filter-area">
             <a href="#none" name="_btn_sort" order_by="fg_process" order_by_asc="asc" class="button filter xsmail <?=($_order_by=="fg_process" && $_order_by_asc=="asc")?"active":""?>">처리여부순</a>
             <a href="#none" name="_btn_sort" order_by="regdate" order_by_asc="desc" class="button filter xsmail <?=($_order_by=="regdate" && $_order_by_asc=="desc")?"active":""?>">최신순</a>
+            <a href="#none" name="_btn_sort" order_by="category" order_by_asc="asc" class="button filter xsmail <?=($_order_by=="category" && $_order_by_asc=="asc")?"active":""?>">보험구분순 <i class="icon-up">올림차순</i></a>
+            <a href="#none" name="_btn_sort" order_by="category" order_by_asc="desc" class="button filter xsmail <?=$_order_by=="category" && $_order_by_asc=="desc"?"active":""?>">보험구분순 <i class="icon-down">내림차순</i></a>
         </div>
     </div>
            
@@ -117,6 +138,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
         <table class="table-basic fixed">
            	<colgroup>
                 <col width="5%">
+                <col width="10%">
                 <col width="10%">
                 <col width="8%">
                 <col width="">
@@ -128,6 +150,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>보험구분</th>
                     <th>성명</th>
                     <th>연락처</th>
                     <th>내용</th>
@@ -145,7 +168,8 @@ if($rs->num_rows > 0) {
 ?>
                 <tr>
                     <td><?=$pg->getMaxNumOfPage() - $i?></tdle=>
-                    <td class="left"><a href="./consult_write.php?mode=UPD&ucr_idx=<?=$row["ucr_idx"]?>"><?=$row["name"]?></a></td>
+                    <td><a href="./consult_write.php?mode=UPD&ucr_idx=<?=$row["ucr_idx"]?>"><?=$row["category"]?></a></td>
+                    <td><a href="./consult_write.php?mode=UPD&ucr_idx=<?=$row["ucr_idx"]?>"><?=$row["name"]?></a></td>
                     <td class="left"><a href="./consult_write.php?mode=UPD&ucr_idx=<?=$row["ucr_idx"]?>"><?=$row["hp"]?></a></td>
                     <td class="left clamp"><a href="./consult_write.php?mode=UPD&ucr_idx=<?=$row["ucr_idx"]?>"><?=$row["content"]?></a></td>
                     <td><?=$row["fg_process"]=="1"?"<font color='blue'>완료</font>":"<font color='red'>미처리</font>"?></td>
@@ -157,7 +181,7 @@ if($rs->num_rows > 0) {
     }
 } else {
 ?>
-				<tr><td colspan="8" style="text-align:center;">No Data.</td></tr>
+				<tr><td colspan="9" style="text-align:center;">No Data.</td></tr>
 <?php
 }
 ?>                

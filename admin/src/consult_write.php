@@ -74,6 +74,22 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
                         <td><?=$row['regdate']?></td>
                     </tr>                    
                     <tr>
+                        <th>보험구분</th>
+                        <td>
+                        <div class="select-box" style="width: 150px;">
+                            <select name="category">
+<?php
+    for($i=0;$i<count($arrInsurCategory);$i++) {
+?>
+                                <option value="<?=$arrInsurCategory[$i]?>" <?=$row['category']==$arrInsurCategory[$i]?"selected":""?>><?=$arrInsurCategory[$i]?></option>
+<?php
+    }
+?>
+                            </select>
+                        </div>                            
+                        </td>
+                    </tr>                    
+                    <tr>
                         <th>처리여부</th>
                         <td>
                         <div class="select-box" style="width: 120px;">

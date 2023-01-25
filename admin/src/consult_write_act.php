@@ -23,6 +23,7 @@ $mode = RequestUtil::getParam("mode", "INS");
 $ucr_idx = RequestUtil::getParam("ucr_idx", "");
 $fg_process = RequestUtil::getParam("fg_process", "");
 $memo = RequestUtil::getParam("memo", "");
+$category = RequestUtil::getParam("category", "기타");
 
 $auto_defense = RequestUtil::getParam("auto_defense", "");
 
@@ -49,6 +50,7 @@ try {
         $uq = new UpdateQuery();
         $uq->add("fg_process", $fg_process);
         $uq->add("memo", $memo);
+        $uq->add("category", $category);
         $uq->addNotQuot("upddate", "now()");
         
         if ($row["fg_process"]=="0" && $fg_process=="1") {

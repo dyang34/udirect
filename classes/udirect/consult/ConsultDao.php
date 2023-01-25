@@ -18,7 +18,7 @@ class ConsultDao extends A_Dao
 
 	function selectByKey($db, $key) {
 		 
-	    $sql =" select ucr_idx, name, hp, content, fg_del, regdate, fg_process, memo, procdate, upddate "
+	    $sql =" select ucr_idx, name, hp, content, fg_del, regdate, fg_process, memo, procdate, upddate, category "
 	        ." from ud_consult_req "
 			." where ucr_idx = ".$this->quot($db, $key)
 		;
@@ -36,7 +36,7 @@ class ConsultDao extends A_Dao
 
 	function selectFirst($db, $wq) {
 
-		$sql =" select ucr_idx, name, hp, content, fg_del, regdate, fg_process, memo, procdate, upddate "
+		$sql =" select ucr_idx, name, hp, content, fg_del, regdate, fg_process, memo, procdate, upddate, category "
 			." from ud_consult_req"
 			.$wq->getWhereQuery()
 			.$wq->getOrderByQuery()
@@ -56,7 +56,7 @@ class ConsultDao extends A_Dao
 
 	function select($db, $wq) {
 	    
-		$sql =" select ucr_idx, name, hp, content, fg_del, regdate, fg_process, memo, procdate, upddate "
+		$sql =" select ucr_idx, name, hp, content, fg_del, regdate, fg_process, memo, procdate, upddate, category "
 			." from ud_consult_req a "
 			.$wq->getWhereQuery()
 			.$wq->getOrderByQuery()
@@ -68,7 +68,7 @@ class ConsultDao extends A_Dao
 	function selectPerPage($db, $wq, $pg) {
 		
 		$sql =" select @rnum:=@rnum+1 as rnum, r.* from ("
-			."		select @rnum:=0, ucr_idx, name, hp, content, fg_del, regdate, fg_process, memo, procdate, upddate "
+			."		select @rnum:=0, ucr_idx, name, hp, content, fg_del, regdate, fg_process, memo, procdate, upddate, category "
 			." 		from ud_consult_req a "
 			." 		INNER JOIN ( "
 	        ."			select ucr_idx as idx from ud_consult_req a "
@@ -125,10 +125,11 @@ class ConsultDao extends A_Dao
 
 	function insert($db, $arrVal) {
 
-	    $sql =" insert into ud_consult_req(name, hp, content, regdate)"
+	    $sql =" insert into ud_consult_req(name, hp, content, category, regdate)"
 	        ." values ('".$this->checkMysql($db, $arrVal["name"])
 				."', '".$this->checkMysql($db, $arrVal["hp"])
 	            ."', '".$this->checkMysql($db, $arrVal["content"])
+				."', '".$this->checkMysql($db, $arrVal["category"])
 	            ."', now())"
 		;
 		
