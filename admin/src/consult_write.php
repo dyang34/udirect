@@ -74,7 +74,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
                         <td><?=$row['regdate']?></td>
                     </tr>                    
                     <tr>
-                        <th>보험구분</th>
+                        <th>문의유형</th>
                         <td>
                         <div class="select-box" style="width: 150px;">
                             <select name="category">

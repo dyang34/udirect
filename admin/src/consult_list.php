@@ -78,7 +78,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
                 </colgroup>
                         <tbody>
                             <tr>
-                                <th>보험구분</th>
+                                <th>문의유형</th>
                                 <td>
                                     <div class="select-box" style="width:150px;">
                                         <select name="_category" depth="1">
@@ -129,8 +129,8 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
         <div class="filter-area">
             <a href="#none" name="_btn_sort" order_by="fg_process" order_by_asc="asc" class="button filter xsmail <?=($_order_by=="fg_process" && $_order_by_asc=="asc")?"active":""?>">처리여부순</a>
             <a href="#none" name="_btn_sort" order_by="regdate" order_by_asc="desc" class="button filter xsmail <?=($_order_by=="regdate" && $_order_by_asc=="desc")?"active":""?>">최신순</a>
-            <a href="#none" name="_btn_sort" order_by="category" order_by_asc="asc" class="button filter xsmail <?=($_order_by=="category" && $_order_by_asc=="asc")?"active":""?>">보험구분순 <i class="icon-up">올림차순</i></a>
-            <a href="#none" name="_btn_sort" order_by="category" order_by_asc="desc" class="button filter xsmail <?=$_order_by=="category" && $_order_by_asc=="desc"?"active":""?>">보험구분순 <i class="icon-down">내림차순</i></a>
+            <a href="#none" name="_btn_sort" order_by="category" order_by_asc="asc" class="button filter xsmail <?=($_order_by=="category" && $_order_by_asc=="asc")?"active":""?>">문의유형순 <i class="icon-up">올림차순</i></a>
+            <a href="#none" name="_btn_sort" order_by="category" order_by_asc="desc" class="button filter xsmail <?=$_order_by=="category" && $_order_by_asc=="desc"?"active":""?>">문의유형순 <i class="icon-down">내림차순</i></a>
         </div>
     </div>
            
@@ -150,7 +150,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>보험구분</th>
+                    <th>문의유형</th>
                     <th>성명</th>
                     <th>연락처</th>
                     <th>내용</th>
