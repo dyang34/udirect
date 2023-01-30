@@ -1,4 +1,6 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT']."/common/udirect_default_data.php";
+
 require_once $_SERVER['DOCUMENT_ROOT']."/include/common.php";
 ?>
 <!DOCTYPE html>
@@ -195,34 +197,41 @@ require_once $_SERVER['DOCUMENT_ROOT']."/include/common.php";
 		<div class="section fp-auto-height" id="section3">
 			<div class="intro">
 				<div class="box-service-list">
-					<!-- /** 고객센터 -->
-					<div class="customer-wrap">
-						<h2 class="wow fadeInUp" data-wow-delay=".2s">고객센터</h2>
-						<a href="tel:1800-9010" class="tel wow fadeInUp" data-wow-delay=".4s">1800-9010</a>
-						<p class="wow fadeInRight" data-wow-delay=".6s">
-							<span>평일 09:00~18:00</span>
-							(점심시간 12:00~13:00)
-						</p>
-					</div>
 					<!-- /** 상담예약 -->
 					<div class="consult-wrap">
 						<h2 class="wow fadeInUp" data-wow-delay=".6s">상담예약</h2>
                         <form name="sendForm">
                             <ul class="clearfix inb wow fadeInRight" data-wow-delay=".8s">
                                 <li>
-                                    <p>성명</p>
-                                    <input type="text" class="input-bottom" name="consult_name" placeholder="성명을 입력하세요">
-                                    
-                                    <p>연락처</p>
-                                    <input type="tel" class="input-bottom" name="consult_hp" placeholder="연락처를 입력하세요" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="11">
+                                    <div>
+                                        <div class="second-col">
+                                            <p>성명</p>
+                                            <input type="text" class="input-bottom" name="consult_name" placeholder="성명을 입력하세요">
+                                        </div>
+                                        <div class="second-col">
+                                            <p>연락처</p>
+                                            <input type="tel" class="input-bottom" name="consult_hp" placeholder="연락처를 입력하세요" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="11">
+                                        </div>
 
-									<p>상담 내용</p>
-									<textarea name="consult_content" class="textarea" placeholder="150자 이내로 작성해 주세요" maxlength="150"></textarea>
-
-                                    <!--a href="" class="button kakao">
-                                        <i class="icon-kakao"></i>
-                                        카카오톡 상담하기
-                                    </a-->
+                                        <div class="first-col">
+                                            <p>문의 유형</p>
+                                            <div class="select-box">
+                                                <select name="category">
+<?php
+    for($i=0;$i<count($arrInsurCategory);$i++) {
+?>
+                                <option value="<?=$arrInsurCategory[$i]?>" <?=$_category==$arrInsurCategory[$i]?"selected":""?>><?=$arrInsurCategory[$i]?></option>
+<?php
+    }
+?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="first-col">
+                                            <p>상담 내용</p>
+                                            <textarea name="consult_content" class="textarea" placeholder="150자 이내로 작성해 주세요" maxlength="150"></textarea>
+                                        </div>
+                                    </div>
                                 </li>
                                 <li>
                                     <a id="two" class="btn privacy-link">개인정보 수집 및 이용에 대한 동의</a>
@@ -235,6 +244,23 @@ require_once $_SERVER['DOCUMENT_ROOT']."/include/common.php";
                                 </li>
                             </ul>
                         </form>
+					</div>
+
+					<!-- /** 고객센터 -->
+					<div class="customer-wrap">
+						<h2 class="wow fadeInUp" data-wow-delay=".2s">고객센터</h2>
+						<a href="tel:1800-9010" class="tel wow fadeInUp" data-wow-delay=".4s">1800-9010</a>
+						<p class="wow fadeInRight" data-wow-delay=".6s">
+							<span>평일 09:00~18:00</span>
+							(점심시간 12:00~13:00)
+						</p>
+                        <!-- 카카오톡 Start --
+                        <div class="btn-right">
+                            <a href="" class="button kakao wow fadeInRight" data-wow-delay=".8s">
+                                <i class="icon-kakao"></i> 카카오톡 상담하기
+                            </a>
+                        </div>
+                        <!-- 카카오톡 End -->
 					</div>
 				</div>
 			</div>
@@ -354,110 +380,117 @@ function onPopKBAuthMark()
 <input type="hidden" name="mHValue" value='8326894d65d3cd16f05a5e59619a388f'/>
 </form>
 
-    <script src="js/wow.min.js"></script>
+<script src="js/wow.min.js"></script>
 
-    <script type="text/javascript">
+<script type="text/javascript">
+var mc_consult_submitted = false;
 
-        $(document).on('click','a[name=btnSave]',function() {
+	$(document).on('click','a[name=btnSave]',function() {
 
-            if($.trim($('input[name=consult_name]').val())=="") {
-                alert("성명을 입력해 주십시오.    ");
-                $('input[name=consult_name]').focus();
-                return false;
-            }
+		if(mc_consult_submitted == true) { return false; }
 
-            if($.trim($('input[name=consult_hp]').val())=="") {
-                alert("연락처를 입력해 주십시오.    ");
-                $('input[name=consult_hp]').focus();
-                return false;
-            }
+		if($.trim($('input[name=consult_name]').val())=="") {
+			alert("성명을 입력해 주십시오.    ");
+			$('input[name=consult_name]').focus();
+			return false;
+		}
 
-            if($('input[name=consult_hp]').val().length < 9) {
-                alert("올바른 연락처가 아닙니다.    ");
-                $('input[name=consult_hp]').focus();
-                return false;
-            }
+		if($.trim($('input[name=consult_hp]').val())=="") {
+			alert("연락처를 입력해 주십시오.    ");
+			$('input[name=consult_hp]').focus();
+			return false;
+		}
+
+		if($('input[name=consult_hp]').val().length < 9) {
+			alert("올바른 연락처가 아닙니다.    ");
+			$('input[name=consult_hp]').focus();
+			return false;
+		}
 
 /*
-            var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/
-            if(!regPhone.test($("input[name=consult_hp]").val())) {
-                alert("올바른 연락처가 아닙니다.    ");
-                $('input[name=consult_hp]').focus();
-                return flase;
-            }
+		var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/
+		if(!regPhone.test($("input[name=consult_hp]").val())) {
+			alert("올바른 연락처가 아닙니다.    ");
+			$('input[name=consult_hp]').focus();
+			return flase;
+		}
 */
-            if(!$('#chk_agree').is(':checked')) {
-                alert("개인정보 수집 및 이용에 대한 동의에 체크해 주십시오.    ");
-                $('#chk_agree').focus();
-                return false;
-            }
+		if(!$('#chk_agree').is(':checked')) {
+			alert("개인정보 수집 및 이용에 대한 동의에 체크해 주십시오.    ");
+			$('#chk_agree').focus();
+			return false;
+		}
 
-            $.ajax({
-                type : "POST",
-                url : "/ajax/consult_ins_ajax.php",
-                data : $('form[name=sendForm]').serialize(),
-                dataType:"json",
-                success : function(data, status) {
+		mc_consult_submitted = true;
 
-                    if (data.result=="true") {
-                        $('input[name=consult_name]').val("");
-                        $('input[name=consult_hp]').val("");
-						$('textarea[name=consult_content]').val("");
-                        $('#chk_agree').prop('checked', false);
+		$.ajax({
+			type : "POST",
+			url : "/ajax/consult_ins_ajax.php",
+			data : $('form[name=sendForm]').serialize(),
+			dataType:"json",
+			success : function(data, status) {
 
-                        alert("상담예약이 완료되었습니다.    ");
-                    } else {
-                        alert(data.msg);
-                    }
+				if (data.result=="true") {
+					$('input[name=consult_name]').val("");
+					$('input[name=consult_hp]').val("");
+					$('textarea[name=consult_content]').val("");
+					$('#chk_agree').prop('checked', false);
 
-                    return false;
-                },
-                error : function(err)
-                {
-                    alert(err.responseText);
-                
-                    return false;
-                }
-            }); // ajax end
-
-            return false;
-        });
-
-        $(document).ready(function() {
-            $('#fullpage').fullpage({
-                verticalCentered: true,
-                anchors: ['home', 'insurance', 'recommend', 'counsel', 'udirect', 'footer'],
-                menu: '#menu',
-				responsiveWidth: 1100,
-				scrollBar: true
-            });
-        });
-
-       // main Header 
-		$(function(){
-			$(window).scroll(function(){
-				var navbar = $(this).scrollTop();
-//				console.log(navbar);
-				var $header = $('header');
-				if(navbar > 450){
-					$header.addClass('activated');
-				}else{
-					$header.removeClass('activated');
+					alert("상담예약이 완료되었습니다.    ");
+				} else {
+					alert(data.msg);
 				}
-			});
-		});
 
-		$(".btn").click(function(){
-			var btn = $(this).attr("id");
-			//alert(btn);
-			$("#modal").removeAttr("class").addClass(btn);
-		});
+				mc_consult_submitted = true;
+				return false;
+			},
+			error : function(err)
+			{
+				alert(err.responseText);
+			
+				mc_consult_submitted = true;
+				return false;
+			}
+		}); // ajax end
 
-		$("#modal").click(function(){
-			$(this).addClass("out");
+		return false;
+	});
+
+	$(document).ready(function() {
+		$('#fullpage').fullpage({
+			verticalCentered: true,
+			anchors: ['home', 'insurance', 'recommend', 'counsel', 'udirect', 'footer'],
+			menu: '#menu',
+			responsiveWidth: 1100,
+			scrollBar: true
 		});
-		
-		new WOW().init();
-    </script>
+	});
+
+	// main Header 
+	$(function(){
+		$(window).scroll(function(){
+			var navbar = $(this).scrollTop();
+//				console.log(navbar);
+			var $header = $('header');
+			if(navbar > 450){
+				$header.addClass('activated');
+			}else{
+				$header.removeClass('activated');
+			}
+		});
+	});
+
+	$(".btn").click(function(){
+		var btn = $(this).attr("id");
+		//alert(btn);
+		$("#modal").removeAttr("class").addClass(btn);
+	});
+
+	$("#modal").click(function(){
+		$(this).addClass("out");
+	});
+	
+	new WOW().init();
+</script>
 </body>
 </html>
