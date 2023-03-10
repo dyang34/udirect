@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/classes/cms/util/JsUtil.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/classes/cms/login/LoginManager.php";
 
 if (!LoginManager::isManagerLogined()) {
-    JsUtil::alertReplace("비정상적인 접근입니다.", "/admin");
+    JsUtil::alertReplace("로그인 하시기 바랍니다.", "/admin");
     exit;
 }
 

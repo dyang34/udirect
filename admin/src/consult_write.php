@@ -10,7 +10,8 @@ require_once $_SERVER['DOCUMENT_ROOT']."/classes/udirect/consult/ConsultMgr.php"
 
 $menuNo = [1,1,1];
 
-if (LoginManager::getManagerLoginInfo("grade_0") < 5) {
+$grade_0 = LoginManager::getManagerLoginInfo("grade_0");
+if ($grade_0 < 5) {
     JsUtil::alertBack("작업 권한이 없습니다.    ");
     exit;
 }
@@ -76,6 +77,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
                     <tr>
                         <th>문의유형</th>
                         <td>
+<?/*                            
                         <div class="select-box" style="width: 150px;">
                             <select name="category">
 <?php
@@ -86,7 +88,10 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
     }
 ?>
                             </select>
-                        </div>                            
+                        </div>
+*/?>
+                            <input type="hidden" name="category" value="<?=$row['category']?>" />
+                            <?=$row['category']?>
                         </td>
                     </tr>                    
                     <tr>
@@ -112,7 +117,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
             <a href="#" name="btnCancel" class="button lineGray2 large">목록</a>
             <a href="#" name="btnSave" class="button line-basic large">저장</a>
 <?php
-if ($mode=="UPD") {
+if ($mode=="UPD" && !($grade_0 > 5 && $grade_0 < 10)) {
 ?>
             <a href="#" name="btnDel" class="button lineRed large">삭제</a>
 <?php

@@ -9,8 +9,8 @@ require_once $_SERVER['DOCUMENT_ROOT']."/classes/cms/db/WhereQuery.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/classes/cms/db/Page.php";
 
 $menuNo = [1,1,1];
-
-if (LoginManager::getManagerLoginInfo("grade_0") < 5) {
+$grade_0 = LoginManager::getManagerLoginInfo("grade_0");
+if ($grade_0 < 5) {
     JsUtil::alertBack("작업 권한이 없습니다.    ");
     exit;
 }
@@ -19,11 +19,28 @@ $currentPage = RequestUtil::getParam("currentPage", "1");
 $pageSize = RequestUtil::getParam("pageSize", "25");
 
 $_fg_process = RequestUtil::getParam("_fg_process", "");
-$_category = RequestUtil::getParam("_category", "");
 $_src_type = RequestUtil::getParam("_src_type", "");
 $_src_text = RequestUtil::getParam("_src_text", "");
 $_order_by = RequestUtil::getParam("_order_by", "fg_process");
 $_order_by_asc = RequestUtil::getParam("_order_by_asc", "asc");
+
+switch($grade_0) {
+    case 6:
+        $_category = RequestUtil::getParam("_category", "여행자보험");
+        break;
+    case 7:
+        $_category = RequestUtil::getParam("_category", "펫보험");
+        break;
+    case 8:
+        $_category = RequestUtil::getParam("_category", "주택화재보험");
+        break;
+    case 9:
+        $_category = RequestUtil::getParam("_category", "건강보험");
+        break;
+    default;
+        $_category = RequestUtil::getParam("_category", "");
+        break;
+}
 
 $pg = new Page($currentPage, $pageSize);
 
@@ -80,18 +97,30 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/include/header.php";
                             <tr>
                                 <th>문의유형</th>
                                 <td>
+<?php
+    if ($grade_0 > 5 && $grade_0 < 10) {
+?>
+                                <?=$_category?>
+<?php
+    } else {
+?>
+
+
                                     <div class="select-box" style="width:150px;">
                                         <select name="_category" depth="1">
                                             <option value="" <?=$_category==""?"selected='selected'":""?>>전체</option>
 <?php
-    for($i=0;$i<count($arrInsurCategory);$i++) {
+        for($i=0;$i<count($arrInsurCategory);$i++) {
 ?>
                                 <option value="<?=$arrInsurCategory[$i]?>" <?=$_category==$arrInsurCategory[$i]?"selected":""?>><?=$arrInsurCategory[$i]?></option>
 <?php
-    }
+        }
 ?>
                                         </select>
                                     </div>
+<?php
+    }
+?>
                                 </td>
                                 <th>처리여부</th>
                                 <td>
