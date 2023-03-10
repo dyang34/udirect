@@ -240,7 +240,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/include/common.php";
                                             <input type="checkbox" id="chk_agree" name="chk_agree" value="1">동의합니다.<span></span>
                                         </label>
                                     </div>
-                                    <a class="button white large-58" name="btnSave">예약 신청</a>
+                                    <a href="" class="button white large-58" name="btnSave">예약 신청</a>
                                 </li>
                             </ul>
                         </form>
@@ -453,7 +453,7 @@ var mc_consult_submitted = false;
 			}
 		}); // ajax end
 
-//		return false;
+		return false;
 	});
 
 	$(document).ready(function() {
