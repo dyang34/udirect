@@ -62,7 +62,6 @@ $message_email = "<div>유다이렉트에 상담(".$category.")이 등록 되었
 
 $arrHiworksRes = HiworksApiUtil::sendAlarm($arrUser, $title, $message, $img, $link, $mlink);
 
-/************************** 문자나라 문자 발송 로직 */
 if($category=="주택화재보험") {
 	$wq = new WhereQuery(true, true);
 	$wq->addAndString2("fg_del","=","0");
@@ -80,27 +79,24 @@ if($category=="주택화재보험") {
 			}
 
 			if(!empty($row["hp_no"])) {
+				/************************** 문자나라 문자 발송 로직 Start **************************/
 
 				// 문자메시지를 실제로 수신할 전화번호
 				$hpReceiver = $row["hp_no"];
 				
-				// 수신메시지설정, allow_mms 에 따라 내용이 짤릴 수 있음
-				// 발신번호 사정등록제에 따라 '고객문의형태'의 경우 입력받은 번호를 발신번호로
-				// 사용할 수 없으므로 메시지 앞부분에 입력번호를 추가하는 형태
 				$hpMesg = "유다이렉트에 상담(주택화재보험)이 등록 되었습니다.
 				
 				관리자에서 상세 내용을 확인해 주세요.";
 				
-				// UTF-8 글자셋 이용으로 한글이 깨지는 경우에만 주석을 푸세요
 				$hpMesg = iconv("UTF-8", "EUC-KR","$hpMesg");
-				
-				// 특수문자 사용에 따른 메시지 인코딩
 				$hpMesg = urlencode($hpMesg);
 				
 				// 전송
 				$url = "/MSG/send/web_admin_send.htm?userid=$userid&passwd=$passwd&sender=$hpSender&receiver=$hpReceiver&encode=1&message=$hpMesg&end_alert=$endAlert&allow_mms=$allowMms";
 				
 				SendMesg($url);
+
+				/************************** 문자나라 문자 발송 로직 End **************************/
 			
 			}
 		}
