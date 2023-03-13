@@ -14,6 +14,10 @@ switch(LoginManager::getManagerLoginInfo('grade_0')) {
         JsUtil::replace("/admin/src/consult_list.php");
         break;
     case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
         JsUtil::replace("/admin/src/consult_list.php");
         break;
     case "10":
