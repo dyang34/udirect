@@ -1,4 +1,3 @@
-<? $mNum = "1";  $sNum = "1"; ?>
 <?php 
 require_once $_SERVER['DOCUMENT_ROOT']."/include/header.php"; 
 ?>
