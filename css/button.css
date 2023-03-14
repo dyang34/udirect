@@ -27,17 +27,13 @@
   border-radius: 3px; border:2px solid var(--color-white); height: 52px; line-height: 52px;
   color: var(--color-white);
 }
-.basic-line:hover {
-  border: 2px solid var(--point-color); color: var(--color-white);
-  background-color: var(--point-color);
-}
 
 .kakao {
   position: relative;
   background-color: var(--color-yellow); color: #3D2A2D; 
   font-size: var(--fS-txt-1-05); font-weight: 700;
-  width: calc(260px - 53px); height: 85px; line-height: 85px;
-  padding-left: 53px;
+  width: calc(260px - 53px); height: 75px; line-height: 75px;
+  padding-left: 53px; margin-top: 20px;
   border-radius: 3px;
 }
 .kakao:hover {
@@ -55,9 +51,38 @@
   border: 2px solid var(--color-navy);
 }
 .basic-line:hover {
-  border: 2px solid var(--color-sky); color: var(--color-white);
-  background-color: var(--color-sky);
+  border: 2px solid var(--point-color); color: var(--color-white);
+  background-color: var(--point-color);
 }
+.line-more {
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  box-shadow: 0px 0px 0px rgba(0,0,0, 0);
+}
+.line-more:hover {
+  border-color: var(--color-turquoise);
+  color: var(--color-turquoise);
+}
+.line-more:active {
+  background-color: var(--color-turquoise);
+  color: var(--color-black);
+}
+.view-more {
+  border: 1px solid var(--point-color);
+  color: var(--point-color);
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 0px rgba(0,0,0, 0);
+}
+.view-more:hover {
+  background-color: var(--point-color);
+  color: var(--color-white);
+}
+.view-more:active {
+  border-color: var(--color-blue);
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
 
 .navy {
   background-color: var(--color-navy); color: var(--color-white);

@@ -73,6 +73,11 @@ strong {
 p {
   font-size: var(--fS-txt-02); font-weight: 400;
 }
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+}
 
 /* form elements */
 form {
@@ -115,6 +120,7 @@ select {
 h2 { font-size: var(--fS-ttl-3-625); font-weight: 700; }
 h3 { font-size: var(--fS-ttl-2-55); font-weight: 700; }
 strong { font-weight: 700; }
+p { word-break: keep-all; }
 
 html::-webkit-scrollbar {
     background-color: var(--color-snow);
@@ -150,11 +156,6 @@ txtarea {
 input:focus::-webkit-input-placeholder, txtarea:focus::-webkit-input-placeholder { color: transparent; }
           input:focus:-ms-input-placeholder, txtarea:focus:-ms-input-placeholder { color: transparent; }
                   input:focus::-moz-placeholder, txtarea:focus::-moz-placeholder { color: transparent; }
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 
 input {
   vertical-align: middle;
@@ -165,7 +166,9 @@ input:focus {
   border-color: var(--color-red);
 }
 .input01 {
-  width: 100%; height: 42px; line-height: 40px;
+  width: 100%; height: 40px; line-height: 40px;
+  border: 1px solid var(--color-ligth-gray);
+  background-color: var(--color-white);
 }
 .input-bottom {
   width: 100%; height: 48px; line-height: 48px;
@@ -191,49 +194,59 @@ select {
   padding: 0 0 1px;
   border: 0; border-radius: 0;
   width: 100%;
-  font-weight: 400;
+  font-weight: 400; color: var(--color-white);
   cursor: pointer;
 }
 select:focus, select:active {
   outline: 0;
-  border-color: var(--color-red);
+  border-color: var(--color-yellow);
 }
 
 .select-box {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 100%; height: 42px; line-height: 40px;
-  background-color: var(--color-white);
-  border-radius: 3px; border: 1px solid var(--color-light-gray);
+  width: 100%; height: 48px; line-height: 48px; color: var(--color-white);
+  background-color: transparent;
+  border-radius: 0px; border-bottom: 1px solid var(--color-white);
   cursor: pointer;
 }
 .select-box select {
-  line-height: 40px;
-  width: 100%; padding-left: 15px;
+  line-height: 48px;
+  width: 100%; padding-right: 0px;
+  color: var(--color-white); text-align: left; font-size: var(--fS-txt-1-05);
 }
 .select-box:before {
   content: '';
   width: 35px;
   position: absolute; top: 0px; right: 0px; bottom: 0px;
-  background: var(--color-snow);
-  border-radius: 0 5px 5px 0;
+  background: transparent;
+  border-radius: 0;
   pointer-events: none;
 }
 .select-box:after {
   content: '';
-  position: absolute; top: 0; right: 8px; bottom: 0;
-  background: url('../img/common/icon-arrow.svg') no-repeat; background-size: 100%;
-  width: 14px; height: 14px;
-  margin: auto;
+  position: absolute; top: 0; right: 0px; bottom: 0;
+  background: url('../img/main/icon-select-arrow.svg?en') no-repeat; background-size: 100%;
+  width: 22px; height: 22px;
+  margin: auto; background-color: transparent;
   pointer-events: none;
 }
+.select-box:focus,
 .select-box:hover {
-  border: 1px solid var(--color-red);
+  border-color: var(--color-yellow);
 }
 .select-box:hover:after {
-  background: url('../img/common/icon-arrow-hover.svg') no-repeat;
+  background: url('../img/main/icon-select-arrow-hover.svg?en') no-repeat;
+  background-size: 100%;
+  width: 22px; height: 22px;
 }
+.select-box option {
+  padding: 0px; font-size: var(--fS-txt-95); line-height: 2.8;
+  color: var(--color-white); text-align: left;
+  background: var(--color-dark-gray);
+}
+
 
 
 
@@ -306,9 +319,10 @@ label.checkbox span::after {
 
   --color-purple: #5C0F8B;
   --color-navy: #2E408E;
-  --color-sky: var(--color-white);;
+  --color-sky: #00A0DF;
+  --color-turquoise: #25FFF2;
   --color-green-yellow: #76BC21;
-  --color-yellow: #FCE200;  
+  --color-yellow: #FCE200;
   --color-melon-yellow: #FFBD13;
   --color-orange: #FF9015;
   --color-red: #FE3B1F;

@@ -258,7 +258,7 @@ a.kbstar img {
   position:relative; 
   display: inline-block;
   background: #fff; 
-  padding: 40px; max-width: 420px;
+  padding: 40px; min-width: 520px;
 }
 #modal .modal-bg .modal-cont h2 {
   position: relative; 
@@ -275,6 +275,27 @@ a.kbstar img {
   width: 180px; height: 48px;
   border-radius: 3px;
   margin-top: 1rem;
+}
+#modal .modal-bg .modal-cont .claose-box {
+  position: absolute; top: 40px; right: 40px;
+  width: 24px; height: 24px;
+  cursor: pointer;
+}
+#modal .modal-bg .modal-cont .claose-box a {
+  display: block;
+  position: relative;
+  margin: 0px;
+  width: 100%; height: 100%;
+  border-radius: 0px;
+}
+#modal .modal-bg .modal-cont .claose-box i.icon-btn-close {
+  display: block;
+  width: 24px; height: 24px;  
+  background-color: #000; background-size: 100%;
+  -webkit-mask: url('../img/sub/icon-btn-close.svg') no-repeat;
+          mask: url('../img/sub/icon-btn-close.svg') no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 #modal .modal-bg .modal-cont .close svg {
   width: 24px; fill: #fff; vertical-align: top;
@@ -296,6 +317,80 @@ a.kbstar img {
   font-size: 1rem; font-weight: 700; line-height: 1.6;
   margin-bottom: .55rem;
 }
+#modal .modal-bg .modal-reser-item {
+  position:relative; 
+  width: 520px;
+  border-top: 2px solid #000;
+  padding-top: 1.25rem; text-align: left;
+}
+#modal .modal-bg .modal-reser-item form {
+  width: 100%;
+}
+#modal .modal-bg .modal-reser-item form > ul li,
+#modal .modal-bg .modal-reser-item > ul li {
+  margin-top: .55rem;
+}
+#modal .modal-bg .modal-reser-item form > ul li:first-child,
+#modal .modal-bg .modal-reser-item > ul li:first-child {
+  margin-top: 0rem;
+}
+.modal-reser-item form > ul li > h3,
+.modal-reser-item > ul li > h3 {
+  font-size: var(--fS-ttl-1-125); font-weight: 700;
+  margin-top: 1rem;
+}
+.modal-reser-item form > ul li .input01,
+.modal-reser-item > ul li .input01 {
+  font-weight: 400;
+  width: calc(100% - .75rem);
+  padding-left: .75rem;
+}
+.modal-reser-item form > ul li .textarea,
+.modal-reser-item > ul li .textarea {
+  border: 1px solid var(--color-ligth-gray);
+  width: calc(100% - 1.1rem);
+  padding: 1rem 0.55rem;
+}
+.modal-reser-item form > ul li .box-privacy-item,
+.modal-reser-item > ul li .box-privacy-item {
+  overflow-y: scroll;
+  max-height: 120px;
+  border: 1px solid var(--color-ligth-gray);
+  width: calc(100% - 1.1rem);
+  margin-top: 1rem; padding: .55rem;
+}
+.modal-reser-item form > ul li .box-privacy-item strong,
+.modal-reser-item > ul li .box-privacy-item strong {
+  font-size: var(--fS-txt-1); font-weight: 700;
+}
+.modal-reser-item form > ul li .box-privacy-item strong,
+.modal-reser-item > ul li .box-privacy-item strong {
+  font-size: var(--fS-txt-95); font-weight: 700;
+}
+#modal.two .modal-bg .modal-cont .modal-reser-item form > ul li .box-privacy-item p,
+#modal.two .modal-bg .modal-cont .modal-reser-item > ul li .box-privacy-item p {
+  font-size: var(--fS-txt-8); font-weight: 400;
+  padding-top: .55rem;
+}             
+#modal.two .modal-bg .modal-cont .modal-reser-item form .agree,
+#modal.two .modal-bg .modal-cont .modal-reser-item .agree {
+  margin-top: .55rem;
+}
+#modal.two .modal-bg .modal-cont .modal-reser-item form .agree label.checkbox:before,
+#modal.two .modal-bg .modal-cont .modal-reser-item .agree label.checkbox:before {
+  border-color: var(--color-black);
+}
+#modal.two .modal-bg .modal-cont .modal-reser-item form .agree label.checkbox span:after,
+#modal.two .modal-bg .modal-cont .modal-reser-item form .agree label.checkbox  span::before,
+#modal.two .modal-bg .modal-cont .modal-reser-item .agree label.checkbox span:after,
+#modal.two .modal-bg .modal-cont .modal-reser-item .agree label.checkbox  span::before {
+  background-color: var(--color-black);
+}
+#modal.two .modal-bg .modal-cont .modal-reser-item form > ul li .close,
+#modal.two .modal-bg .modal-cont .modal-reser-item > ul li .close {
+  width: 100%;
+}
+
 
 /* one */
 #modal.one {
