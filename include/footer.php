@@ -26,15 +26,7 @@
 				</a>
 			</div>
 		</footer>
-<?/*
-    <script src="js/wow.min.js"></script>
-    <!-- Initialize Swiper -->
-    <script>
-		new WOW().init();
-    </script>
-*/?>	
-
-<script>
+<script type="text/javascript">
 function onPopKBAuthMark()
 {
 	window.open('','KB_AUTHMARK','height=604, width=648, status=yes, toolbar=no, menubar=no,location=no');
@@ -42,6 +34,10 @@ function onPopKBAuthMark()
 	document.KB_AUTHMARK_FORM.target='KB_AUTHMARK';
 	document.KB_AUTHMARK_FORM.submit();
 }
+		
+$(document).ready(function() {
+	new WOW().init();
+});
 </script>
 <form name="KB_AUTHMARK_FORM" method="get">
 <input type="hidden" name="page" value="B009111"/>
