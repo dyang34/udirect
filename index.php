@@ -138,21 +138,24 @@ require_once $_SERVER['DOCUMENT_ROOT']."/include/common.php";
 								</a>
 							</div>
 						</li>
-						<!-- /** CHUBB 
+						<!-- /** CHUBB -->
 						<li class="wow fadeInRight" data-wow-delay="1.2s">
 							<div class="box-insurance-item">
-								<a href="" target="_blank">
+								<a href="/house/chubb/1/">
+									<div class="icon-belt-wrap">
+										<span>주택화재 보험</span>
+									</div>
 									<div class="insurance-logo"><img src="img/main/logo-CHUBB.png"></div>
 									<h3 class="insurance-ttl">
 										<span>우리집무사고</span>
 										<span>할인보험</span>
 									</h3>
-									<p class="insurance-con">간단한 설명이 들어갈 자리입니다.</p>
-									<span href="#" class="btn deep-gray more"><span></span></span>
+									<p class="insurance-con">우리 집을 지키는 우산, 주택화재보험</p>
+									<!--span href="#" class="btn deep-gray more"><span></span></span-->
 								</a>
 							</div>
 						</li>
-						-->
+						<!-- /** CHUBB end -->
 					</ul>
 				</div>
 			</div>

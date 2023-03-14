@@ -5,7 +5,7 @@ $head_meta_keywords = "주택화재보험, 화재보험, 화재보험료, 가입
 $head_meta_description = $head_og_description = "우리집무사고할인보험은 집에서 발생할 수 있는 다양한 사고에 대한 보상을 제공하는 보험상품입니다. 주택 소유자 뿐만 아니라 전세나 월세로 주택을 거주하는 입주자들도 가입할 수 있으며, 급배수, 지진손해, 층간소음, 20대 가전 수리비, 도난 손해에 대하여 보장합니다. 주택화재보험의 종류, 가입 방법, 요건, 보험료 등에 대하여 자세히 알려 드립니다.";
 
 $head_og_url = "https://udirect.co.kr/house/chubb/1/";
-$head_og_image = "";
+$head_og_image = "/img/common/mobile_230314.jpg";
 
 require_once $_SERVER['DOCUMENT_ROOT']."/include/header.php"; 
 ?>
@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/include/header.php";
 <div class="visual-img-wrap">
 	<div class="visual-text-item">
 		<div class="inner">
-			<h2 class="wow fadeInUp"><!--img src="../../../img/sub/chubb_com_white.png"-->chubb 우리집무사고할인보험</h2>
+			<h2 class="wow fadeInUp"><!--img src="../../../img/sub/chubb_com_white.png"-->Chubb 우리집무사고할인보험</h2>
 			<div class="text-con wow fadeInUp" data-wow-delay=".3s">
 				<p>- <strong>급배수</strong> 500만원 & <strong>자기부담금 없음</strong> (특약)</p>
 				<p>- 지진 손해 <strong>전지역 가입</strong> 가능 (특약)</p>
