@@ -1,3 +1,4 @@
+<?php $menuNo = [9,0]; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/include/header.php'; ?>
 
 	<section class="terms-wrap">
