@@ -75,7 +75,7 @@ if($category=="주택화재보험") {
 			$row = $rs->fetch_assoc();
 
 			if(!empty($row["email"])) {
-				HiworksApiUtil::sendMail("bis", $row["email"], "dyang34@bis.co.kr, euni.bis@bis.co.kr","", $title, $message_email);
+				HiworksApiUtil::sendMail("bis", $row["email"], "dyang34@bis.co.kr, dykis@bis.co.kr","", $title, $message_email);
 			}
 
 			if(!empty($row["hp_no"])) {
