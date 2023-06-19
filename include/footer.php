@@ -29,20 +29,20 @@
 <script type="text/javascript">
 function onPopKBAuthMark()
 {
-	window.open('','KB_AUTHMARK','height=604, width=648, status=yes, toolbar=no, menubar=no,location=no');
-	document.KB_AUTHMARK_FORM.action='http://escrow1.kbstar.com/quics';
-	document.KB_AUTHMARK_FORM.target='KB_AUTHMARK';
-	document.KB_AUTHMARK_FORM.submit();
+window.open('','KB_AUTHMARK','height=604, width=648, status=yes, toolbar=no, menubar=no, location=no');
+document.KB_AUTHMARK_FORM.action='https://okbfex.kbstar.com/quics';
+document.KB_AUTHMARK_FORM.target='KB_AUTHMARK';
+document.KB_AUTHMARK_FORM.submit();
 }
-		
+
 $(document).ready(function() {
 	new WOW().init();
 });
 </script>
 <form name="KB_AUTHMARK_FORM" method="get">
-<input type="hidden" name="page" value="B009111"/>
-<input type="hidden" name="cc" value="b010807:b008491"/>
-<input type="hidden" name="mHValue" value='8326894d65d3cd16f05a5e59619a388f'/>
+<input type="hidden" name="page" value="C021590"/>
+<input type="hidden" name="cc" value="b034066:b035526"/>
+<input type="hidden" name="mHValue" value='d9eb15b1b2498d608c35406809b19554'/>
 </form>
 
 	</body>
