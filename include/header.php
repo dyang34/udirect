@@ -65,6 +65,7 @@ if(empty($head_og_description)) {
     <meta property="og:description" content="<?=$head_og_description?>">
     
     <meta name="format-detection" content="telephone=no"><!-- iOS에서 숫자가 전화번호로 인식되는 문제 막기 -->
+
     <link rel="icon" type="image/png" sizes="32x32" href="/img/common/favicon.ico">
     <link rel="shortcut icon" href="/img/common/favicon.ico" />
     <link rel="apple-touch-icon-precomposed" href="/img/common/favicon.png"/>
@@ -83,6 +84,8 @@ if(empty($head_og_description)) {
     <script src="/js/script.js?v=<?=time()?>"></script>
     <script src="/js/wow.min.js"></script> <!-- /****** wowJs animation -->
 
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PRGCNSN"></script>
+    
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -90,9 +93,10 @@ if(empty($head_og_description)) {
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KR5Q5PM');</script>
     <!-- End Google Tag Manager -->
-
+    
 </head>
 <body>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KR5Q5PM"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

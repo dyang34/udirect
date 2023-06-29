@@ -42,6 +42,8 @@ require_once $_SERVER['DOCUMENT_ROOT']."/include/common.php";
     <script src="/js/jquery.fullpage.js?v=2"></script>
     <script src="/js/examples.js?v=<?=time()?>"></script>
 
+	<script src="https://www.googleoptimize.com/optimize.js?id=OPT-PRGCNSN"></script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
