@@ -119,7 +119,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/include/common.php";
 									<div class="icon-belt-wrap">
 										<span>여행자 보험</span>
 									</div>
-									<div class="insurance-logo"><img src="img/main/logo-toursafe.png"></div>
+									<div class="insurance-logo"><img src="img/main/logo-toursafe.png?aae"></div>
 									<h3 class="insurance-ttl">여행의 필수품</h3>
 									<p class="insurance-con"><span>여행도, 유학도, 장기 체류도 OK!<span>공인인증서 없이 간편가입!</p>
 									<!--span href="#" class="btn deep-gray more"><span></span></span-->
